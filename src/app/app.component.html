@@ -27,3 +27,41 @@
     </div>
   </div>
 </div>
+
+<!-- ------------------------------ -->
+
+<div class="card mb-3" style="max-width: 540px">
+  <div class="row g-0">
+    <div class="col-md-3 align-self-center pad">
+      <img [src]="img" class="img-fluid rounded" alt="..." />
+      <p class="text-center text-muted name">{{ userName }}</p>
+    </div>
+    <div class="col-md-9">
+      <div class="card-body">
+        <h5 class="card-title">{{ repoName }}</h5>
+        <p class="card-text">
+          {{ repoDes }}
+        </p>
+        <div class="row g-0">
+          <div class="col-md-3 align-self-center pad">
+            <p class="card-text">
+              <small class="text-muted">Stars: {{ repoStars }} </small>
+            </p>
+          </div>
+          <div class="col-md-3 align-self-center pad">
+            <p class="card-text">
+              <small class="text-muted">Issue: {{ repoIssue }} </small>
+            </p>
+          </div>
+          <div class="col-md-6 align-self-center pad">
+            <p class="card-text">
+              <small class="text-muted">
+                Last Updated {{ repoUpdateTime }} Hours ago
+              </small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
