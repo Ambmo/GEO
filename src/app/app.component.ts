@@ -20,7 +20,7 @@ export class AppComponent {
   constructor(private http: HttpClient) {
     this.Onload();
   }
-
+  // All functionality ---------------
   Onload() {
     this.http
       .get(this.url)
