@@ -1,67 +1,106 @@
-<div class="card mb-3" style="max-width: 540px">
-  <div class="row g-0">
-    <div class="col-md-4 align-self-center pad">
-      <img src="../assets/images/1.jpeg" class="img-fluid rounded" alt="..." />
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          This is a wider card with supporting text below as a natural lead-in
-          to additional content. This content is a little bit longer.
-        </p>
-        <div class="row g-0">
-          <div class="col-md-2 align-self-center pad">
-            <p class="card-text"><small class="text-muted">Stars:</small></p>
-          </div>
-          <div class="col-md-2 align-self-center pad">
-            <p class="card-text"><small class="text-muted">Issue:</small></p>
-          </div>
-          <div class="col-md-8 align-self-center pad">
-            <p class="card-text">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </p>
+<div class="main">
+  <div class="card mb-3" style="max-width: 540px">
+    <div class="row g-0">
+      <div class="col-md-4 align-self-center pad">
+        <img
+          src="../assets/images/1.jpeg"
+          class="img-fluid rounded"
+          alt="..."
+        />
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">AHMED MOSTAFA</h5>
+          <p class="card-text">
+            Experimental Card for Author! <br />
+            Regards ✌
+          </p>
+          <div class="row g-0">
+            <div class="col-md-2 align-self-center pad">
+              <p class="card-text"><small class="text-muted">Stars:</small></p>
+            </div>
+            <div class="col-md-2 align-self-center pad">
+              <p class="card-text"><small class="text-muted">Issue:</small></p>
+            </div>
+            <div class="col-md-8 align-self-center pad">
+              <p class="card-text">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- ------------------------------ -->
-
-<div class="card mb-3" style="max-width: 540px">
-  <div class="row g-0">
-    <div class="col-md-3 align-self-center pad">
-      <img [src]="img" class="img-fluid rounded" alt="..." />
-      <p class="text-center text-muted name">{{ userName }}</p>
+  <!-- ------------------------------ -->
+  <div class="text-center">
+    <div class="pagination">
+      <a href="#" (click)="OnclickP()">&laquo;</a>
+      <a href="#" (click)="Onclick1()">1</a>
+      <a href="#" (click)="Onclick2()">2</a>
+      <a href="#" (click)="Onclick3()">3</a>
+      <a href="#" (click)="Onclick4()">4</a>
+      <a href="#" (click)="Onclick5()">5</a>
+      <a href="#" (click)="Onclick6()">6</a>
+      <a href="#" (click)="OnclickN()">&raquo;</a>
     </div>
-    <div class="col-md-9">
-      <div class="card-body">
-        <h5 class="card-title">{{ repoName }}</h5>
-        <p class="card-text">
-          {{ repoDes }}
-        </p>
-        <div class="row g-0">
-          <div class="col-md-3 align-self-center pad">
-            <p class="card-text">
-              <small class="text-muted">Stars: {{ repoStars }} </small>
+    <div>
+      You're on page {{ pageNumber }}
+      <pre>  30/page</pre>
+    </div>
+  </div>
+
+  <!-- ----------------------- -->
+  <div
+    class="card mb-3"
+    style="max-width: 600px"
+    *ngFor="let item of arr; let i = index"
+  >
+    <div class="row g-0">
+      <div class="col-md-3 align-self-center pad">
+        <img
+          src="{{ item.owner.avatar_url }}"
+          class="img-fluid rounded"
+          alt="..."
+        />
+      </div>
+      <div class="col-md-9">
+        <div class="card-body">
+          <h6 class="card-title">
+            {{ item.name }}
+            <p class="text-start text-muted name owner">
+              <small>Owned by {{ item.owner.login }}</small>
             </p>
-          </div>
-          <div class="col-md-3 align-self-center pad">
-            <p class="card-text">
-              <small class="text-muted">Issue: {{ repoIssue }} </small>
-            </p>
-          </div>
-          <div class="col-md-6 align-self-center pad">
-            <p class="card-text">
-              <small class="text-muted">
-                Last Updated {{ repoUpdateTime }} Hours ago
-              </small>
-            </p>
+          </h6>
+
+          <p class="card-text">
+            {{ item.description }}
+          </p>
+          <div class="row g-0">
+            <div class="col-md-3 align-self-center pad">
+              <p class="card-text">
+                <small class="text-muted"
+                  >Stars: {{ item.stargazers_count }}
+                </small>
+              </p>
+            </div>
+            <div class="col-md-3 align-self-center pad">
+              <p class="card-text">
+                <small class="text-muted">Issue: {{ item.open_issues }} </small>
+              </p>
+            </div>
+            <div class="col-md-6 align-self-center pad">
+              <p class="card-text">
+                <small class="text-muted">
+                  Last Updated {{ timeArr[i] }} Hours ago
+                </small>
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <!-- --------------------------------- -->
 </div>
